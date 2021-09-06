@@ -21,6 +21,7 @@ public class Player : Mover
 
         if (Input.GetKey("escape"))
         {
+            Debug.Log("Izasao escape");
             Application.Quit();
         }
 

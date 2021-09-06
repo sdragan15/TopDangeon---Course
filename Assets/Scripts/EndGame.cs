@@ -23,6 +23,7 @@ public class EndGame : MonoBehaviour
 
     public void CloseGame()
     {
+        Debug.Log("Izasao CloseGame");
         Application.Quit();
     }
 

@@ -87,11 +87,15 @@ public class GameManager : MonoBehaviour
         //Debug.Log(Path.Combine(Application.persistentDataPath, "/records.txt"));
         DataSaver data = LoadFromFile();
 
-        for(int i=0; i<15; i++)
+        if(data != null)
         {
-            records[i].time = data.times[i];
-            records[i].name = data.names[i];
+            for (int i = 0; i < 15; i++)
+            {
+                records[i].time = data.times[i];
+                records[i].name = data.names[i];
+            }
         }
+        
     }
 
     public void AddNewRecord(int time, string text)
@@ -295,7 +299,7 @@ public class GameManager : MonoBehaviour
 
         Debug.Log(Application.persistentDataPath);
 
-        string path = "records.json";
+        string path = "records.txt";
 
 
         DataSaver data = new DataSaver(record);
@@ -307,7 +311,7 @@ public class GameManager : MonoBehaviour
 
     public static DataSaver LoadFromFile()
     {
-        string path = "records.json";
+        string path = "records.txt";
 
         if (File.Exists(path))
         {
@@ -320,6 +324,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("Path is unreachable");
+
             return null;
         }
     }

@@ -21,8 +21,9 @@ public class finishGameScene : MonoBehaviour
         GameManager.instance.startMenu.ShowStartMenu();
     }
 
-    public void EndGame()
+    public void EndGameButton()
     {
+        Debug.Log("Izasao EndGame");
         Application.Quit();
     }
 
