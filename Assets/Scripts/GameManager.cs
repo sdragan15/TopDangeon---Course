@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(hud);
         DontDestroyOnLoad(backgroundMusic);
 
-        SaveToFile(records);
         player = FindObjectOfType<Player>();
         PlayerPrefs.DeleteAll();
         UploadDataToGame();
